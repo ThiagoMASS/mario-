@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo</title>
+    <link rel="shortcut icon" href="assets/imgs/Mario-ico.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    
+    <div class="game-board">
+
+      
+        <img src="assets/imgs/clouds.png" class="cloud">
+        <img src="assets/imgs/mario.gif" class="mario">
+        <img src="assets/imgs/pipe.png" class="pipe">
+        <div class="tijolodivs">
+            <img src="assets/imgs/tijolo.png" class="tijolo">
+        
+        </div>
+        
+        
+    </div>
+    <dialog id="questionDialog">
+        <h2>Pergunta</h2>
+        <p>Qual é a sua cor favorita?</p>
+        <form method="dialog">
+          <label>
+            <input type="radio" name="color" value="red"> Vermelho
+          </label>
+          <label>
+            <input type="radio" name="color" value="blue"> Azul
+          </label>
+          <label>
+            <input type="radio" name="color" value="green"> Verde
+          </label>
+          <button id="submitAnswer">Enviar</button>
+        </form>
+      </dialog>
+
+    <div class="game-over">
+        <button class="restart">REINICIAR</button>
+    </div>
+
+</body>
+</html>
