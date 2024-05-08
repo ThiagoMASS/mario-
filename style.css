@@ -20,7 +20,7 @@
     position: absolute;
     bottom: calc(100px + 50px); /* Ajuste conforme necessário para ficar acima do pipe */
     left: 100%; /* Começa fora da tela no lado direito */
-    animation: tijolo-animations 10s linear infinite; /* Ajuste a duração conforme necessário */
+    animation: tijolo-animations 5s linear infinite; /* Ajuste a duração conforme necessário */
     z-index: 1; /* Garante que o tijolo fique acima do pipe */
 }
 
@@ -28,7 +28,7 @@
     position: absolute;
     bottom: 0;
     width: 60px;
-    animation: pipe-animations 1.5s infinite linear;
+    animation: pipe-animations 1s infinite linear;
 }
 
 .mario{
