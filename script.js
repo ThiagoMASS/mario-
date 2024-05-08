@@ -118,7 +118,7 @@ const loop = setInterval(() => {
 
     if(  
       
-        marioPosition > tijoloposition.bottom   && // Ajuste para a altura do tijolo
+        marioPosition > tijoloposition.bottom - 85  && // Ajuste para a altura do tijolo
         marioPosition + 130 > tijoloposition.top && // Ajuste para a altura do tijolo
         marioPosition + 120 > tijoloposition.left && // Lado esquerdo do tijolo
     marioPosition < tijoloposition.right 
