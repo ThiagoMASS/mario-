@@ -2,11 +2,36 @@ const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
 const cloud = document.querySelector('.cloud');
 
+const questaoA= document.getElementById("a");
+const questaoB= document.getElementById("b");
+const questaoC= document.getElementById("c");
+const pergunt = document.getElementsByClassName("pergunt");
+
+
 const questionDialog = document.getElementById('questionDialog');
 const gameOver = document.querySelector('.game-over');
 const restartButton = document.querySelector('.restart');
 const tijolo = document.querySelector('.tijolo');
 
+
+const enviarMoldal=  document.getElementById('submitAnswer').addEventListener('click', (e)=>{
+    questionDialog.close()
+    pipe.style.animation = 'pipe-animations 1.5s infinite linear';
+    pipe.style.left = ``;
+    
+    tijolo.style.animation= 'tijolo-animations 5s linear infinite;';
+    tijolo.style.left= ``
+   
+    tijolo.style.left = '100%'; // Volta à posição inicial
+
+    mario.src = 'assets/imgs/mario.gif';
+    mario.style.width = '130px';
+    mario.style.bottom = '0px';
+    mario.style.marginLeft = '';
+    mario.style.animation = '';
+
+    cloud.style.left = ``;
+})
 //banco de questões 
 
 
@@ -63,6 +88,17 @@ const perguntas = [
     }
     ]
 
+const perguntaAleatoria = ()=>{
+     
+    let indice = Math.floor(Math.random()* perguntas.length);
+    pergunt[0].innerHTML = perguntas[indice].pergunta;
+
+    questaoA.innerHTML = perguntas[indice].opcoes[0];
+    questaoB.innerHTML = perguntas[indice].opcoes[1];
+    questaoC.innerHTML = perguntas[indice].opcoes[2];
+}
+
+
 
 
 
@@ -91,7 +127,7 @@ const loop = setInterval(() => {
         right: computedTijoloLeft + tijolo.offsetWidth
     };
 
-    console.log(tijoloposition);
+    //console.log(tijoloposition);
   
 
     if (pipePosition <= 100 && pipePosition > 0 && marioPosition < 60) {
@@ -99,7 +135,8 @@ const loop = setInterval(() => {
         pipe.style.animation = 'none';
         pipe.style.left = `${pipePosition}px`;
 
-     
+     tijolo.style.animation= 'none';
+     tijolo.style.left= `${computedTijoloLeft}px`
 
         mario.style.animation = 'none';
         mario.style.bottom = `${marioPosition}px`;
@@ -123,12 +160,32 @@ const loop = setInterval(() => {
         marioPosition + 120 > tijoloposition.left && // Lado esquerdo do tijolo
     marioPosition < tijoloposition.right 
     ){
-        
-    alert(`tijolo`)
+        modal()
+    
+        tijolo.style.animation= 'none';
+        tijolo.style.left= `${computedTijoloLeft}px`
+
+    mario.style.animation = 'none';
+    mario.style.bottom = `${marioPosition}px`;
+
+    cloud.style.animation = 'cloud 20s infinite linear';
+    cloud.style.left = `${cloudPosition}px`;
+    pipe.style.animation = 'none';
+    pipe.style.left = `${pipePosition}px`;
+
     }
 }, 10);
 
+function modal(){
+   
+    questionDialog.showModal()
+  
+    
+  
+}
 
+
+perguntaAleatoria();
 
 
 let Loop

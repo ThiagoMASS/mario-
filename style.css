@@ -70,6 +70,18 @@
     cursor: pointer;
 }
 
+
+dialog{
+  
+    
+    flex-direction: column;
+    padding: 50px;
+    border-radius: 10px;
+    border-style: none;
+    gap: 30px;
+    
+    
+}
 @keyframes pipe-animations {
     from{
         right: -80px;
